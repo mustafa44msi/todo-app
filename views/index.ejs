@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do Uygulaması</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>To-Do Listesi</h1>
+
+  <form id="addTaskForm">
+    <input type="text" name="title" placeholder="Yeni görev ekle" required>
+    <button type="submit">Ekle</button>
+  </form>
+
+  <!-- 📋 Görev listesi için boş bir <ul> -->
+  <ul id="taskList"></ul>
+
+   <div id="editModal">
+    <input type="text" id="editInput" placeholder="Görev başlığını düzenle" />
+    <button id="saveEditBtn">Kaydet</button>
+    <button id="cancelEditBtn">İptal</button>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

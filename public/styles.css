@@ -1,0 +1,175 @@
+/* Genel sayfa düzeni */
+body {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  padding: 0 20px;
+}
+
+/* Başlık */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Form */
+form#addTaskForm {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+form#addTaskForm input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+form#addTaskForm input[type="text"]:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+form#addTaskForm button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#addTaskForm button:hover {
+  background-color: #1c5980;
+}
+
+/* Görev listesi */
+ul#taskList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul#taskList li {
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+ul#taskList li span {
+  flex-grow: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+ul#taskList li input[type="checkbox"] {
+  margin-right: 12px;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+ul#taskList li button {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+ul#taskList li button:hover {
+  background-color: #c0392b;
+}
+
+ /* Düzenleme Modalı Stili */
+#editModal {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Modal içindeki input */
+#editModal input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+#editModal input[type="text"]:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+/* Modal butonları */
+#editModal button {
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+/* Kaydet butonu */
+#saveEditBtn {
+  background-color: #2980b9;
+  color: white;
+  margin-right: 10px;
+}
+
+#saveEditBtn:hover {
+  background-color: #1c5980;
+}
+
+/* İptal butonu */
+#cancelEditBtn {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+}
+
+#cancelEditBtn:hover {
+  background-color: #95a5a6;
+}
+
+/* Modal arka plan karartma için (isteğe bağlı) */
+#modalOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 999;
+}
