@@ -7,8 +7,6 @@ async function getTasks() {
     const taskList = document.getElementById('taskList');
     taskList.innerHTML = '';
 
-    tasks.reverse(); // Ters sırada göster
-
     tasks.forEach(task => {
       const li = document.createElement('li');
 
@@ -153,5 +151,23 @@ saveEditBtn.addEventListener('click', async () => {
 cancelEditBtn.addEventListener('click', () => {
   editModal.style.display = 'none';
   currentEditTaskId = null;
+});
+
+const toggle = document.getElementById('toggleDarkMode');
+
+// Sayfa yüklendiğinde dark mode açık mı diye kontrol et
+if (localStorage.getItem('dark-mode') === 'enabled') {
+  document.body.classList.add('dark-mode');
+  toggle.checked = true;
+}
+
+toggle.addEventListener('change', function () {
+  if (this.checked) {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('dark-mode', 'enabled');
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('dark-mode', 'disabled');
+  }
 });
 
